@@ -8,24 +8,21 @@ public class Problem5 {
 	public static void main(String[] args) {
 	   Scanner scan = new Scanner(System.in);
 	   int i[] = new int[6];
-	   int sum = 45; int a=1;
-	  for(a=1; a<6; a++) {
-		  a=(int)(Math.random())*sum+1;
-		  i[a]=a;
-		  sum=sum-1;
-	  for(int b =0; b<sum; b++) {
-		  if(i[a]==i[b])
-			  b=(int)(Math.random())*sum+1;
-		 break;
-		  
-		}break;	  
+	   int count=0;
+	  getrandom : while(count<6) {
+		  int num=(int)(Math.random()*45+1);
+		  int b;	 
+		  for(b =0; b<count; b++) {
+			  if(num==i[b]) {
+				  System.out.println("중복된 숫자 : " + num);
+				  continue getrandom;
+			  }
+		  }
+		  i[count]=num;
+		  System.out.println(i[count]);
+		  count++;
 	  }
-	 
-	  for(a=0; a<6; a++)
-		  System.out.println("로또번호"+i[a]);
-	   
-	   
-	   
+   
 
 	}
 
