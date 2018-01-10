@@ -22,8 +22,6 @@ public class Problem5 {
 		  System.out.println(i[count]);
 		  count++;
 	  }
-   
-
 	}
 
 }
